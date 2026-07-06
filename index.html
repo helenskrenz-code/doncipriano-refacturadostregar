@@ -573,7 +573,7 @@ function showSync(msg){
 function hideSync(){ document.getElementById('sync-bar').classList.remove('show'); }
 
 async function syncFromSheets(){
-  if(!accessToken){ toast('Iniciá sesión primero'); return; }
+  if(!currentUser){ toast('Iniciá sesión primero'); return; }
   showSync('Sincronizando datos desde Google Sheets...');
   try {
     const [rInf, rNor, rRef] = await Promise.all([
